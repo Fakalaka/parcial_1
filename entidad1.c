@@ -86,6 +86,7 @@ int cliente_baja(Cliente* array,int limite, int id)
         array[indice].isEmpty=1;
         retorno=0;
     }
+    // HACER COSO
     return retorno;
 }
 
@@ -359,17 +360,19 @@ int cliente_informar(Cliente* array,int limite,Publicacion* arrayP,int limiteP)
     int max=cliente_maximoAvisosActivos(array,limite,arrayP,limiteP);
     printf("\n*Cliente(s) con mas avisos activos*\n");
     for(i=0;i<limite;i++){
-        if((!array[i].isEmpty&&cliente_contarAvisos(arrayP,limiteP,array[i].id)==max) && !max)
+        if((!array[i].isEmpty&&cliente_contarAvisos(arrayP,limiteP,array[i].id)==max) && max)
             cliente_mostrarPorId(array,limite,array[i].id);
     }
     printf("\n*Cliente(s) con mas avisos pausados*\n");
+    max=cliente_maximoAvisosPausados(array,limite,arrayP,limiteP);
     for(i=0;i<limite;i++){
-        if((!array[i].isEmpty&&cliente_contarAvisosPausados(arrayP,limiteP,array[i].id)==max) && !max)
+        if((!array[i].isEmpty&&cliente_contarAvisosPausados(arrayP,limiteP,array[i].id)==max) && max)
             cliente_mostrarPorId(array,limite,array[i].id);
     }
     printf("\n*Cliente(s) con mas avisos*\n");
+    max=cliente_maximoAvisos(array,limite,arrayP,limiteP);
     for(i=0;i<limite;i++){
-        if((!array[i].isEmpty&&cliente_contarAvisos(arrayP,limiteP,array[i].id)==max) && !max)
+        if((!array[i].isEmpty&&cliente_contarAvisos(arrayP,limiteP,array[i].id)==max) && max)
             cliente_mostrarPorId(array,limite,array[i].id);
     }
     return 0;

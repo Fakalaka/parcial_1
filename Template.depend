@@ -113,7 +113,7 @@
 	<string.h>
 	"utn.h"
 
-1525995518 source:d:\parcial_rey\entidad2.c
+1525997820 source:d:\parcial_rey\entidad2.c
 	<stdio.h>
 	<stdlib.h>
 	<time.h>
@@ -125,7 +125,7 @@
 1525996878 d:\parcial_rey\entidad1.h
 	"entidad2.h"
 
-1525995193 d:\parcial_rey\entidad2.h
+1525997792 d:\parcial_rey\entidad2.h
 	"entidad1.h"
 
 1525988581 d:\parcial_rey\utn.h
@@ -137,14 +137,14 @@
 	<string.h>
 	"utn.h"
 
-1525996231 source:d:\parcial_rey\main.c
+1525997858 source:d:\parcial_rey\main.c
 	<stdio.h>
 	<stdlib.h>
 	"entidad1.h"
 	"entidad2.h"
 	"utn.h"
 
-1525996314 source:d:\parcial_rey\entidad1.c
+1525997338 source:d:\parcial_rey\entidad1.c
 	<stdio.h>
 	<stdlib.h>
 	<time.h>

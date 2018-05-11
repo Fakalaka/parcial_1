@@ -9,6 +9,7 @@
 static int proximoId(void);
 static int buscarId(Publicacion* array,int limite,int id);
 static int buscarLibre(Publicacion* array,int limite);
+static int maxRubro(Publicacion* array,int limite);
 
 int publicacion_init(Publicacion* array,int limite)
 {
@@ -222,4 +223,58 @@ int publicacion_reanudar(Publicacion* array,int limite,Cliente* arrayC,int limit
         }
     }
     return retorno;
+}
+
+int publicacion_informar(Publicacion* array,int limite)
+{
+    int i;
+    int contador=0;
+    int rubro;
+    if(!getValidInt("\nRubro: ","\nEso no es un rubro\n",&rubro,0,999,2)){
+        for(i=0;i<limite;i++){
+            if(!array[i].isPaused && array[i].rubro==rubro)
+                contador++;
+        }
+    printf("\n*Cantidad de publicaciones del rubro %d* %d\n",rubro,contador);
+    }
+    printf("\n*Rubro con mas publicaciones activas* %d\n",maxRubro(array,limite));
+    return 0;
+}
+
+int maxRubro(Publicacion* array,int limite)
+{
+    int i;
+    int contador=1;
+    int anterior=-1;
+    int max=0;
+    int flagSwap;
+    int rubro;
+    Publicacion aux;
+    do{
+        flagSwap=0;
+        for(i=1;i<limite;i++){
+            if(array[i].rubro>array[i-1].rubro){
+                aux=array[i];
+                array[i]=array[i-1];
+                array[i-1]=aux;
+                flagSwap=1;
+            }
+        }
+    }while(flagSwap);
+    for(i=0;i<limite;i++){
+        if(!array[i].isPaused && !array[i].isEmpty){
+            if(array[i].rubro!=anterior){
+                if(contador>max){
+                    rubro=array[i].rubro;
+                    max=contador;
+                }
+                anterior=array[i].rubro;
+                contador=1;
+            }
+            else{
+                contador++;
+            }
+        }
+    }
+    return rubro;
 }

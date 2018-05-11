@@ -23,5 +23,6 @@ int publicacion_baja(Publicacion* array,int limite, int id);
 int publicacion_comprar(Publicacion* array,int limite,Cliente* Clientes,int id);
 int publicacion_pausar(Publicacion* array,int limite,Cliente* arrayC,int limiteC);
 int publicacion_reanudar(Publicacion* array,int limite,Cliente* arrayC,int limiteC);
+int publicacion_informar(Publicacion* array,int limite);
 
 #endif // publicacion_H_INCLUDED

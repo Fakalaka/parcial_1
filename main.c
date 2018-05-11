@@ -51,12 +51,10 @@ int main()
                 publicacion_mostrar(aviso,QTYPublicacion,array);
                 break;
             case 9:
-                printf("\n");
                 cliente_informar(array,QTYCliente,aviso,QTYPublicacion);
                 break;
             case 10:
-                cliente_maxPublicaciones(array,QTYCliente,aviso,QTYPublicacion);
-                printf("\n");
+                publicacion_informar(aviso,QTYPublicacion);
                 break;
             case 11:
                 printf("\nChau!\n");
